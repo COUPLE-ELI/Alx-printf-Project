@@ -1,15 +1,13 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdio.h>
 #include <stdarg.h>
-#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
-typedef struct funct_character
-{
-	char specifier;
-	int funct;
-}f-ch;
 
 int _printf(const char *format, ...);
+int binary (int num);
+int octal(int num);
 
-#endif
+#endif /* MAIN_H */
+
