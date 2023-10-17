@@ -1,5 +1,6 @@
 #include "main.h"
 
+<<<<<<< HEAD
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
@@ -11,6 +12,15 @@ void print_buffer(char buffer[], int *buff_ind);
  *    * Return: Printed chars.
  *
  *     */
+=======
+/**
+ * You don't need the `Null` variable; just check if `format` is NULL.
+ * You should use va_arg to retrieve the character.
+ * Use write to print the character.
+ * You can use strlen from the string.h library to find the string's length.
+ *
+ */
+>>>>>>> 2f79d9478f1b165ee6ea5c16d9bba5624bef7674
 
 int _printf(const char *format, ...)
 
@@ -99,18 +109,56 @@ int _printf(const char *format, ...)
 
 /**
  *
- *  * print_buffer - Prints the contents of the buffer if it exist
- *
- *   * @buffer: Array of chars
- *
- *    * @buff_ind: Index at which to add next char, represents the length.
- *
- *     */
+ * print_buffer - Prints the contents of the buffer if it exist 
+ * @buffer: Array of chars
+ * @buff_ind: Index at which to add next char, represents the length.
+ */
 
 void print_buffer(char buffer[], int *buff_ind)
 
 {
+	int cha_print = 0;
+	va_list list_args;
 
+	if (format == NULL)
+		return -1;
+
+	va_start(list_args, format);
+
+	while (*format)
+	{
+		if (*format != '%')
+		{
+			write(1, format, 1);
+			cha_print++;
+		}
+		else
+		{
+			format++;
+			if (*format == '\0')
+				break;
+
+			if (*format == '%')
+			{
+				write(1, format, 1);
+				cha_print++;
+			}
+			else if (*format == 'c')
+			{
+				char c = va_arg(list_args, int);
+
+				write(1, &c, 1);
+				cha_print++;
+			}
+			else if (*format == 's')
+			{
+				char *str = va_arg(list_args, char*);
+
+				int strlen = 0;
+				while (str[strlen] != '\0')
+					strlen++;
+
+<<<<<<< HEAD
 	if (*buff_ind > 0)
 
 		write(1, &buffer[0], *buff_ind);
@@ -118,4 +166,27 @@ void print_buffer(char buffer[], int *buff_ind)
 
 	*buff_ind = 0;
 
+=======
+				write(1, str, strlen);
+				cha_print += strlen;
+			}
+
+			format++;
+		}
+	}
+
+	va_end(list_args);
+
+	return cha_print;
+>>>>>>> 2f79d9478f1b165ee6ea5c16d9bba5624bef7674
 }
+
+int main()
+{
+	_printf("omotayo\n");
+	_printf("%c\n", 'L');
+	_printf("%s\n", "string");
+	_printf("%%\n");
+	return 0;
+}
+

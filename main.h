@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
+<<<<<<< HEAD
 #include <stdio.h>
 #include <unistd.h>
 #define UNUSED(x) (void)(x)
@@ -63,9 +64,20 @@ struct fmt
 
 typedef struct fmt fmt_t;
 
+=======
+#include <string.h>
+#include <unistd.h>
+
+>>>>>>> 2f79d9478f1b165ee6ea5c16d9bba5624bef7674
 
 int _printf(const char *format, ...);
+int _putchar(char c)
+int binary (int num);
+int octal(int num);
 
+#endif /* MAIN_H */
+
+<<<<<<< HEAD
 int handle_print(const char *fmt, int *i,va_list list, char buffer[], int flags, int width, int precision, int size);
 
 
@@ -209,3 +221,5 @@ long int convert_size_unsgnd(unsigned long int num, int size);
 
 
 
+=======
+>>>>>>> 2f79d9478f1b165ee6ea5c16d9bba5624bef7674
