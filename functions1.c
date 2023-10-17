@@ -18,7 +18,7 @@ int print_unsigned(va_list types, char buffer[],
 	int e = BUFF_SIZE - 2;
 
 	if (num == 0)
-		buffer[i--] = '0';
+		buffer[e--] = '0';
 	buffer[BUFF_SIZE - 1] = '\0';
 	while (num > 0)
 	{
@@ -42,7 +42,7 @@ int print_octal(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	unsigned long int num = va_arg(types, unsigned long int);
-	int e = BiUFF_SIZE - 2;
+	int e = BUFF_SIZE - 2;
 	unsigned long int init_num = num;
 
 	UNUSED(width);
@@ -93,7 +93,7 @@ int print_hexa_upper(va_list types, char buffer[],
 				flags, 'X', width, precision, size));
 }
 /**
- * print_hexadecimal Prints a hexadecimal number in lower or upper case
+ * print_hexa - Prints a hexadecimal number in lower or upper case
  * @types: Lista of arguments
  * @map_to: Array of values to map the number to
  * @buffer: Buffer array to handle print
@@ -128,5 +128,5 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 		buffer[e--] = '0';
 	}
 	e++;
-	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
+	return (write_unsgnd(0, e, buffer, flags, width, precision, size));
 }
