@@ -44,7 +44,7 @@ int print_pointer(va_list types, char buffer[],
 		add_c = ' ', length++;
 	ind++;
 	return (write_pointer(buffer, ind, length,
-				width, flags, padd, add_c, padd_start))
+	width, flags, padd, add_c, padd_start));
 
 }
 
@@ -86,7 +86,6 @@ int print_non_printable(va_list types, char buffer[],
 	return (write(1, buffer, m + offset));
 }
 /**
-<<<<<<< HEAD
  *
  * print_reverse - Prints reverse string.
  * @types: Lista of arguments
