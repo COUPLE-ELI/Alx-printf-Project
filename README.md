@@ -1,10 +1,14 @@
-0x11. C - printf
-Group project
+TASK 0x11.c 
+PROJECT DONE by OMOTAYO AND ELIJAH
 
-As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)
+Noted : As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)
 Our main files will include your main header file (main.h): #include main.h
-You might want to look at the gcc flag -Wno-format when testing with your _printf and the standard printf. Example of test file that you could use
-TASK 0
+
+The gcc compiler provided was able to compile all the file.
+
+Task 0
+These task was able to take one to three argument
+As leasted below.
 I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
 mandatory
 Write a function that produces output according to a format.
