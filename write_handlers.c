@@ -445,7 +445,7 @@ int write_pointer(char buffer[], int ind, int length,
 
 		}
 
-		else if (!(flags & F_MINUS) && padd == '0')/* extra char to left of padd */
+		else if (!(flags & F_MINUS) && padd == '0')
 
 		{
 
