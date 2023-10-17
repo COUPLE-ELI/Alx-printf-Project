@@ -6,6 +6,7 @@
 
 
 int _printf(const char *format, ...);
+int _putchar(char c)
 int binary (int num);
 int octal(int num);
 
